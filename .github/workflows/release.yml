@@ -3,14 +3,14 @@ name: Build and Release
 on:
   push:
     tags:
-      - 'v*' # Solo se ejecuta cuando subes un tag que empiece por 'v' (ej. v0.1.0)
+      - 'v*'
 
 permissions:
-  contents: write # Permiso necesario para crear la release y subir archivos
+  contents: write
 
 jobs:
   build:
-    name: Build on ${{ matrix.os }}
+    name: Build on ${{ matrix.os }} - ${{ matrix.target }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -23,6 +23,16 @@ jobs:
             target: x86_64-pc-windows-msvc
             bin_name: ra_fetch_gui.exe
             archive_name: ra_fetch_gui-windows-x86_64.zip
+          # Versión macOS Apple Silicon (M1/M2/M3)
+          - os: macos-latest
+            target: aarch64-apple-darwin
+            bin_name: ra_fetch_gui
+            archive_name: ra_fetch_gui-macos-arm64.tar.gz
+          # Versión macOS Intel
+          - os: macos-13
+            target: x86_64-apple-darwin
+            bin_name: ra_fetch_gui
+            archive_name: ra_fetch_gui-macos-x86_64.tar.gz
 
     steps:
       - name: Checkout código
@@ -42,8 +52,8 @@ jobs:
       - name: Compilar Release
         run: cargo build --release --target ${{ matrix.target }}
 
-      - name: Empaquetar para Linux
-        if: matrix.os == 'ubuntu-latest'
+      - name: Empaquetar para Linux y macOS
+        if: matrix.os == 'ubuntu-latest' || startsWith(matrix.os, 'macos')
         run: |
           cd target/${{ matrix.target }}/release
           tar -czvf ../../../${{ matrix.archive_name }} ${{ matrix.bin_name }}
