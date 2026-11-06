@@ -23,13 +23,11 @@ jobs:
             target: x86_64-pc-windows-msvc
             bin_name: ra_fetch_gui.exe
             archive_name: ra_fetch_gui-windows-x86_64.zip
-          # Versión macOS Apple Silicon (M1/M2/M3)
           - os: macos-latest
             target: aarch64-apple-darwin
             bin_name: ra_fetch_gui
             archive_name: ra_fetch_gui-macos-arm64.tar.gz
-          # Versión macOS Intel
-          - os: macos-14
+          - os: macos-latest
             target: x86_64-apple-darwin
             bin_name: ra_fetch_gui
             archive_name: ra_fetch_gui-macos-x86_64.tar.gz
