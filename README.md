@@ -3,7 +3,9 @@
 Downloads the RetroAchievements sets for your games on a PC, for [MiaUI](https://github.com/miaui-cfw/MiaUI-GPU-RG35XX)'s offline achievements.
 It works like the console's own RetroAchievements app, but uses the PC's internet connection, so the console needs no Internet Connection Sharing if you have problems with the internal app.
 
-![RA GUI](./ra-gui.jpg)
+<img width="668" height="480" alt="ra-gui-dw" src="https://github.com/user-attachments/assets/291aa32c-8f95-49cf-9e74-3ae5a167b40a" />
+
+
 ## How to Use It (The USB Workflow)
 
 The easiest and safest way to manage your achievements is directly over the USB cable. This means you don't have to constantly remove your SD card, saving the SD slot from wear and tear! 
@@ -17,7 +19,7 @@ Here is the step-by-step workflow:
 4. **Select the Console:** On the main screen, set both **SOURCE** and **OUTPUT** to **Connected Console**. 
 5. **Fetch!** Click on **Download new achievements**. This is the option you will use most of the time. The app will scan your console, download any missing achievement sets, and send them straight back to the device.
 
-
+<img width="240" alt="cool-cat" src="https://github.com/user-attachments/assets/1e04b4cb-d4f0-486a-a9d9-5b7073aba10a" />
 
 ---
 
