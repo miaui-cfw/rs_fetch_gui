@@ -1,3 +1,4 @@
+#![windows_subsystem = "windows"]
 //! ra_fetch_gui - RetroAchievements sets for MiaUI, downloaded on the PC.
 //!
 //! The same three actions as the console's own RetroAchievements.pak (ra_download.py): download the sets that
